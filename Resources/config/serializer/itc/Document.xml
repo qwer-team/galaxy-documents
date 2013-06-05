@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="Itc\DocumentsBundle\Entity\Document\Document" exclusion-policy="none" >
+        <property name="documentType" serialized-name="documentType" accessor-getter="getDocumentTypeTitle"/>
+        <property name="OA1" serialized-name="OA1"/>
+        <property name="transactions" exclude='true'/>
+    </class>
+</serializer>

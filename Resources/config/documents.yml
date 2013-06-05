@@ -1,0 +1,24 @@
+parameters:
+  documents.transaction_class: Galaxy\DocumentsBundle\Entity\Transaction
+  documents.rest_class: Galaxy\DocumentsBundle\Entity\Rest
+  cumulative_limit_account: 7
+  rest.start.year: 13
+  rest.end.year: 14
+  rest.levels.count: 3
+  
+itc_documents:
+    documents: 
+      fundsTransfer:
+        document_transactions:
+          transfer_to_account:
+              status: 2
+              input_account: "{account}"
+              input: [ {level: 1, value: "{OA1}"}]
+              summa: "{summa1}"
+      servicesDebit:
+        document_transactions:
+          deduct_from_account:
+              status: 2
+              output_account: "{account}"
+              output: [ {level: 1, value: "{OA1}"}]
+              summa: "{summa1}"

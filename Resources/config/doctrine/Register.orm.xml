@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Galaxy\DocumentsBundle\Entity\Register" table="galaxy_register">
+        <field name="pointsTypeName" column="points_type_name" type="string" nullable="true"/>
+        <field name="start" column="start" type="integer" nullable="true"/>
+        <field name="accountHint" column="account_hint" type="text" nullable="true"/>
+        <field name="period" column="period" type="integer" nullable="true"/>
+        <field name="periodCost" column="period_cost" type="integer" nullable="true"/>
+        <field name="acquisitionExtensionServices" column="acquisition_extension_services" type="text" nullable="true"/>
+        <field name="pointsTypeHint" column="points_type_hint" type="text" nullable="true"/>
+        <field name="textPaymentService" column="text_payment_service" type="text" nullable="true"/>
+        <field name="points" column="points" type="integer" nullable="true"/>
+        <field name="cost" column="cost" type="integer" nullable="true"/>
+        <field name="notificationZeroBalance" column="notification_zero_balance" type="text" nullable="true"/>
+        
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer>
+    <class name="Galaxy\DocumentsBundle\Entity\Register" exclusion-policy="none" >
+        <property name="pointsTypeName" serialized-name="pointsTypeName"/>
+        <property name="accountHint" serialized-name="accountHint"/>
+        <property name="periodCost" serialized-name="periodCost"/>
+        <property name="acquisitionExtensionServices" serialized-name="acquisitionExtensionServices"/>
+        <property name="pointsTypeHint" serialized-name="pointsTypeHint"/>
+        <property name="textPaymentService" serialized-name="textPaymentService"/>
+        <property name="notificationZeroBalance" serialized-name="notificationZeroBalance"/>
+    </class>
+</serializer>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Galaxy\DocumentsBundle\Entity\Transaction" table="galaxy_transaction">
+        <many-to-one field="documentLine" target-entity="DocumentLine" inversed-by="transactions">
+            <join-columns>
+                <join-column name="document_line_id" referenced-column-name="id" on-delete="CASCADE" nullable="1"/>
+            </join-columns>
+        </many-to-one>
+        <many-to-one field="document" target-entity="Document" inversed-by="transactions">
+            <join-columns>
+                <join-column name="document_id" referenced-column-name="id" nullable="1"/>
+            </join-columns>
+            <cascade>
+                <cascade-persist/>
+            </cascade>
+        </many-to-one>
+    </entity>
+</doctrine-mapping>
