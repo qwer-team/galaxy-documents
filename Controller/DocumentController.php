@@ -175,4 +175,36 @@ class DocumentController extends FOSRestController
         return $repo;
     }
 
+    public function postDocumentCreateApproveAction($type, Request $request)
+    {
+        $document = new Document();
+        $form = $this->createForm(new DocumentType(), $document);
+        $typeRepo = $this->getDocumentTypeRepo();
+        $documentType = $typeRepo->findOneByTitle($type);
+        $document->setDocumentType($documentType);
+
+        $result = array("result" => "fail");
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        try{
+            $data = $request->request->all();
+            $form->bind($data);
+            if ($form->isValid()) {
+                $em->getConnection()->beginTransaction();
+                
+                $em->persist($document);
+                $em->flush();
+                $result = array("result" => "success", "document" => $document);
+            }
+            
+            $result = $this->getDocumentApproveAction($document->getId());
+            $em->getConnection()->commit();
+            return $result;
+        } catch(\Exception $exception){
+            $em->getConnection()->rollback();
+            $em->close();
+            $view = $this->view($result);
+            return $this->handleView($view);
+        }
+    }
 }

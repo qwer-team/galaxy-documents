@@ -12,7 +12,7 @@ class DocumentType extends AbstractType
     {
         $builder
             ->add('OA1', 'integer')
-            ->add('text1', 'textarea')
+            ->add('text1', 'textarea', array('required' => false))
             ->add('summa1', 'number')
             ->add('account', 'integer')
         ;
