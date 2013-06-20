@@ -47,6 +47,7 @@ class DocumentController extends FOSRestController
         $qb = $repo->createQueryBuilder('doc');
 
         $qb->where("doc.documentType = :docType");
+        $qb->orderBy('doc.date', 'DESC');
         $firstResult = $length * ($page - 1);
         $qb->setFirstResult($firstResult)->setMaxResults($length);
         $qb->setParameter("docType", $documentType);
