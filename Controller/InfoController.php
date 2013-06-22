@@ -12,8 +12,8 @@ class InfoController extends FOSRestController
     {
         $accounts = array(
             "active" => 1,
-            "safe" => 2,
-            "deposite" => 3,
+            "deposite" => 2,
+            "safe" => 3,
         );
         
         $repo = $this->getRestRepository();
