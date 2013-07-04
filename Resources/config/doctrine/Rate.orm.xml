@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Galaxy\DocumentsBundle\Entity\Rate" table="galaxy_rate">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <many-to-one field="account1" target-entity="Register">
+            <join-columns>
+                <join-column name="account1" referenced-column-name="id" />
+            </join-columns>
+        </many-to-one>
+        <many-to-one field="account2" target-entity="Register">
+            <join-columns>
+                <join-column name="account2" referenced-column-name="id" />
+            </join-columns>
+        </many-to-one>
+        <field name="value" type="float" column="value"/>
+    </entity>
+</doctrine-mapping>
