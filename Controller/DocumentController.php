@@ -52,7 +52,7 @@ class DocumentController extends FOSRestController
         $qb->setFirstResult($firstResult)->setMaxResults($length);
         $qb->setParameter("docType", $documentType);
 
-        $result = $qb->getQuery()->getResult();
+        $result = $qb->getQuery()->execute();
         $view = $this->view($result);
         return $this->handleView($view);
     }
