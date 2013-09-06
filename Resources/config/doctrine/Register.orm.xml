@@ -12,6 +12,7 @@
         <field name="points" column="points" type="integer" nullable="true"/>
         <field name="cost" column="cost" type="integer" nullable="true"/>
         <field name="notificationZeroBalance" column="notification_zero_balance" type="text" nullable="true"/>
+        <field name="tag" column="tag" type="string" nullable="true"/>
         
   </entity>
 </doctrine-mapping>

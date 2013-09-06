@@ -37,7 +37,7 @@ class InfoController extends FOSRestController
         
         $result = array();
         foreach($rates as $rate){
-            $result[$rate->getAccount2()->getId()] = $rate->getValue();
+            $result[$rate->getAccount2()->getTag()] = $rate->getValue();
         }
         
         return $result;
